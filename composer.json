@@ -1,0 +1,16 @@
+{
+    "name": "yes-corpo/sample-bundle",
+    "description": "Sample bundle for YesCorpo",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "YesCorpo\\Bundle\\SampleBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YesCorpo\\Bundle\\SampleBundle\\Tests\\": "tests/"
+        }
+    }
+}
