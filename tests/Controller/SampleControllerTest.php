@@ -9,7 +9,7 @@ class SampleControllerTest extends WebTestCase
     public function testIndex()
     {
         $client = static::createClient();
-        $client->request('GET', '/sample/');
+        $client->request('GET', '/sample');
 
         $this->assertResponseIsSuccessful();
         $this->assertJson($client->getResponse()->getContent());
