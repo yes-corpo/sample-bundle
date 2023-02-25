@@ -1,0 +1,12 @@
+parameters:
+  sample.title: 'Sample Bundle'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  YesCorpo\Bundle\SampleBundle\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
