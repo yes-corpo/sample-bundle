@@ -135,3 +135,35 @@ The following is the recommended directory structure of an AcmeBlogBundle:
 ├── LICENSE
 └── README.md
 ```
+
+The following files are mandatory, because they ensure a structure convention that automated tools can rely on:
+
+- `src/AcmeBlogBundle.php`: This is the class that transforms a plain directory into a Symfony bundle (change this to your bundle's name);
+
+- `README.md`: This file contains the basic description of the bundle and it usually shows some basic examples and links to its full documentation (it can use any of the markup formats supported by GitHub, such as README.rst);
+
+- `LICENSE`: The full contents of the license used by the code. Most third-party bundles are published under the MIT license, but you can choose any license;
+
+- `docs/index.md`: The root file for the Bundle documentation.
+
+The depth of subdirectories should be kept to a minimum for the most used classes and files. Two levels is the maximum.
+
+The bundle directory is read-only. If you need to write temporary files, store them under the `cache/` or `log/` directory of the host application. Tools can generate files in the bundle directory structure, but only if the generated files are going to be part of the repository.
+
+The following classes and files have specific emplacements (some are mandatory and others are just conventions followed by most developers):
+
+| Type | Directory |
+|--|--|
+| Commands | `src/Command/` |
+| Controllers | `src/Controller/` |
+| Service Container Extensions | `src/DependencyInjection/` |
+| Doctrine ORM entities | `src/Entity/` |
+| Doctrine ODM documents | `src/Document/` |
+| Event Listeners | `src/EventListener/` |
+| Configuration (routes, services, etc.) | `config/` |
+| Web Assets (CSS, JS, images) | `public/` |
+| Translation files | `translations/` |
+| Validation (when not using annotations) | `config/validation/` |
+| Serialization (when not using annotations) | `config/serialization/` |
+| Templates | `templates/` |
+| Unit and Functional Tests | `tests/` |
