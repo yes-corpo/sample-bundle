@@ -16,7 +16,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class IsValidCommand extends Command
 {
-
     public function __construct()
     {
         parent::__construct();
