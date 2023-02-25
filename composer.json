@@ -3,6 +3,10 @@
     "description": "Sample bundle for YesCorpo",
     "license": "MIT",
     "type": "symfony-bundle",
+    "require": {
+        "php": ">=8.1.0",
+        "symfony/framework-bundle": "6.2.*"
+    },
     "autoload": {
         "psr-4": {
             "YesCorpo\\Bundle\\SampleBundle\\": "src/"
