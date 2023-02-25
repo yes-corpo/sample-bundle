@@ -68,7 +68,7 @@ The composer.json file should include at least the following metadata:
 - A brief explanation of the purpose of the bundle.  
 
 ``type``  
-- Use the symfony-bundle value.  
+- Use the `symfony-bundle` value.  
 
 ``license``  
 - a string (or array of strings) with a valid license identifier, such as `MIT`.  
@@ -167,3 +167,36 @@ The following classes and files have specific emplacements (some are mandatory a
 | Serialization (when not using annotations) | `config/serialization/` |
 | Templates | `templates/` |
 | Unit and Functional Tests | `tests/` |
+
+## Tests
+A bundle should come with a test suite written with PHPUnit and stored under the `tests/` directory. Tests should follow the following principles:
+
+- The test suite must be executable with a simple `phpunit` command run from a sample application;
+- The functional tests should only be used to test the response output and some profiling information if you have some;
+- The tests should cover at least 95% of the code base.
+
+````
+A test suite must not contain `AllTests.php` scripts, but must rely on the existence of a `phpunit.xml.dist` file.
+````
+
+## Continuous Integration
+Testing bundle code continuously, including all its commits and pull requests, is a good practice called Continuous Integration. There are several services providing this feature for free for open source projects, like GitHub Actions and Travis CI.
+
+A bundle should at least test:
+
+- The lower bound of their dependencies (by running `composer update --prefer-lowest`);
+- The supported PHP versions;
+- All supported major Symfony versions (e.g. both `4.x` and `5.x` if support is claimed for both).
+Thus, a bundle supporting PHP 7.3, 7.4 and 8.0, and Symfony 4.4 and 5.x should have at least this test matrix:
+
+| PHP version | Symfony version | Composer flags |
+|--|--|--|
+| 7.3 | 4.* | --prefer-lowest |
+| 7.4 | 5.* |  |
+| 8.0 | 5.* |  |
+
+```
+The tests should be run with the `SYMFONY_DEPRECATIONS_HELPER` env variable set to `max[direct]=0`. This ensures no code in the bundle uses deprecated features directly.
+
+The lowest dependency tests can be run with this variable set to `disabled=1`.
+```
