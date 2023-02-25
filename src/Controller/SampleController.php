@@ -16,4 +16,10 @@ class SampleController extends AbstractController
             'path' => 'src/Controller/SampleController.php',
         ]);
     }
+
+    #[Route('/detail', name: 'detail')]
+    public function detail()
+    {
+        return $this->render('@Sample/sample/detail.html.twig');
+    }
 }

@@ -20,4 +20,14 @@ class SampleControllerTest extends WebTestCase
         $this->assertEquals('Welcome to your new controller!', $json['message']);
         $this->assertEquals('src/Controller/SampleController.php', $json['path']);
     }
+
+    public function testDetail()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/sample/detail');
+
+        $this->assertResponseIsSuccessful();
+
+        $this->assertStringContainsString('<h1>Detail</h1>', $client->getResponse()->getContent());
+    }
 }

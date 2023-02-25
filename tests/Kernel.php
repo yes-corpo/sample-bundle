@@ -4,6 +4,7 @@ namespace YesCorpo\Bundle\SampleBundle\Tests;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use YesCorpo\Bundle\SampleBundle\SampleBundle;
 
@@ -20,6 +21,7 @@ class Kernel extends BaseKernel
     {
         return [
             new FrameworkBundle(),
+            new TwigBundle(),
             new SampleBundle(),
         ];
     }
