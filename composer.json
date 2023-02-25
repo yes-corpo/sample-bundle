@@ -16,5 +16,8 @@
         "psr-4": {
             "YesCorpo\\Bundle\\SampleBundle\\Tests\\": "tests/"
         }
+    },
+    "require-dev": {
+        "symfony/test-pack": "^1.1"
     }
 }
