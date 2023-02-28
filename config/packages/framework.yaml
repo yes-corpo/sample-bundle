@@ -1,6 +1,6 @@
 when@test:
     framework:
-        secret: test
+        secret: SECRET
         http_method_override: true
         test: true
         session:
