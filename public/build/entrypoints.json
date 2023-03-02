@@ -1,0 +1,13 @@
+{
+  "entrypoints": {
+    "sample": {
+      "js": [
+        "/build/runtime.62bcf186.js",
+        "/build/sample.a40b3a00.js"
+      ],
+      "css": [
+        "/build/sample.b75294ae.css"
+      ]
+    }
+  }
+}

@@ -4,6 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Sample Bundle{% endblock %}</title>
+    {% block stylesheets %}
+        {# {{ encore_entry_link_tags('@sample.public') }} #}
+
+        <link rel="stylesheet" href="{{ asset('../public/build/sample.css') }}">
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('sample', null, 'sample') }}
+
+        <!-- Renders app.js & a webpack runtime.js file
+            <script src="/build/runtime.js" defer></script>
+            <script src="/build/app.js" defer></script>
+            See note below about the "defer" attribute -->
+    {% endblock %}
   </head>
   <body>
     {% block body %}{% endblock %}
